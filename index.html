@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="POLITECTO X TEUSAQUILLO · Juan Diego Ospina Numa">
+<meta property="og:description" content="Lo que hago por Teusaquillo, en cifras y actualizado cada día.">
+<meta property="og:image" content="img/f29.jpg">
+<meta name="theme-color" content="#c40606">
+<link rel="icon" type="image/png" href="img/picto-rojo.png">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>POLITECTO X TEUSAQUILLO</title>
+<meta name="description" content="Juan Diego Ospina Numa: Consejero Local de Juventud de Teusaquillo, arquitecto y politólogo en formación. Lo que hago por Teusaquillo, en cifras y actualizado cada día.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Archivo:wght@400;500;600;800;900&display=swap">
+<style>
+/* Layout: bandas a todo lo ancho que alternan rojo de campaña y blanco; el motivo de la cebra (rayas blancas) marca los cortes entre secciones. Marca deliberadamente de un solo tema: la línea gráfica de Juan Diego es rojo, blanco y amarillo. */
+:root{
+  --red:#c40606; --red-deep:#8e0404; --red-soft:#fde3e2;
+  --yellow:#ffc700; --white:#ffffff; --ink:#1f0e0e; --muted:#6f5656; --line:#f0d4d3;
+  --display:"Oswald","Arial Narrow","Segoe UI",sans-serif;
+  --body:"Archivo","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.in{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(2rem,5vw,3.1rem);line-height:1}
+.kicker{font-family:var(--display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;color:var(--red)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+/* barra */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--red);color:var(--white)}
+.bar .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.bar img{height:34px;width:auto;display:block}
+.bar nav{display:flex;gap:4px;overflow-x:auto}
+.bar nav a{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.88rem;text-decoration:none;padding:6px 10px;border-radius:4px;white-space:nowrap}
+.bar nav a:hover{background:rgba(255,255,255,.14)}
+
+/* hero */
+.hero{background:var(--red);color:var(--white);position:relative;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:end;padding-block:40px 0}
+.hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.9;font-size:clamp(3.2rem,10vw,7rem);letter-spacing:-.005em}
+.hero h1 .x{color:var(--yellow);display:inline-block;transform:skewX(-8deg)}
+.hero .lede{font-size:clamp(1.05rem,2vw,1.25rem);max-width:34ch;margin:18px 0 0;color:#ffe9e9}
+.hero .who{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 32px}
+.tag{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;background:var(--white);color:var(--red);padding:4px 10px}
+.tag.y{background:var(--yellow);color:var(--ink)}
+.hero .photo{align-self:end;min-width:0}
+.hero .photo img{display:block;width:100%;max-width:440px;margin-left:auto;mix-blend-mode:normal}
+.motto{font-family:var(--display);font-weight:700;text-transform:uppercase;color:var(--yellow);letter-spacing:.08em;font-size:1rem}
+.zebra{height:26px;background:repeating-linear-gradient(90deg,var(--white) 0 46px,transparent 46px 78px);opacity:.95}
+.zebra.red{background:repeating-linear-gradient(90deg,var(--red) 0 46px,transparent 46px 78px)}
+
+section{padding-block:64px}
+.head{display:grid;gap:10px;margin-bottom:28px}
+.head p{margin:0;color:var(--muted);max-width:60ch}
+
+/* cifras */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
+.stat{background:var(--white);padding:22px 20px;display:grid;gap:6px;align-content:start}
+.stat .n{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,6vw,3.6rem);line-height:.95;color:var(--red);font-variant-numeric:tabular-nums}
+.stat .l{font-weight:600;font-size:.95rem}
+.stat .s{font-size:.8rem;color:var(--muted)}
+.updated{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted);margin-top:14px}
+.dot{width:9px;height:9px;border-radius:50%;background:#1f9d55;box-shadow:0 0 0 4px #d6f3e3}
+.live-empty{border:2px dashed var(--line);padding:22px;color:var(--muted);margin-top:16px}
+
+/* trayectoria */
+.track-band{background:var(--red);color:var(--white)}
+.track-band .kicker{color:var(--yellow)}
+.track-band .head p{color:#ffe0e0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.fact{border-top:3px solid var(--white);padding-top:12px;display:grid;gap:4px}
+.fact b{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem}
+.fact span{color:#ffe0e0;font-size:.92rem}
+.fact .yr{font-family:var(--display);color:var(--yellow);font-size:.9rem;letter-spacing:.06em}
+
+/* gestión */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chip{font:600 .85rem var(--body);border:2px solid var(--red);background:var(--white);color:var(--red);padding:6px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--red);color:var(--white)}
+.log{display:grid;gap:0;border-left:4px solid var(--red);margin-left:6px}
+.item{position:relative;padding:0 0 22px 22px;display:grid;gap:4px}
+.item::before{content:"";position:absolute;left:-12px;top:4px;width:20px;height:20px;background:var(--white);border:4px solid var(--red);border-radius:50%}
+.item .meta{font-size:.8rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.item h3{font-family:var(--body);font-weight:800;font-size:1.1rem}
+.item p{margin:0;max-width:65ch}
+.item .fig{font-family:var(--display);font-weight:700;color:var(--red);font-size:1.4rem}
+
+/* quien soy */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.who-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.who-grid li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.who-grid li img{width:26px;height:auto;margin-top:2px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gallery figure{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--red)}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* banderas */
+.flags{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.flag{background:var(--red-soft);padding:22px;display:grid;gap:8px;align-content:start}
+.flag .num{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1;color:var(--red)}
+.flag h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:1.3rem;letter-spacing:.02em}
+.flag p{margin:0}
+.pillars{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+
+/* diccionario */
+.dict{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.word{border:3px solid var(--red);border-radius:14px;padding:20px;display:grid;gap:6px;align-content:start}
+.word img{width:34px;height:auto}
+.word h3{font-family:var(--body);font-weight:900;text-transform:uppercase;color:var(--red);font-size:1.25rem;letter-spacing:.01em;border-bottom:2px solid var(--red);padding-bottom:6px}
+.word .et{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.word p{margin:0;font-size:.95rem}
+
+/* barrios */
+.barrios{display:flex;flex-wrap:wrap;gap:8px}
+.barrio{border:2px solid var(--red);padding:6px 12px;font-weight:600}
+.barrio b{font-family:var(--display);color:var(--red);margin-left:6px}
+
+.bar nav a.cta{background:var(--yellow);color:var(--ink)}
+.tabsm{display:none;gap:6px;overflow-x:auto;padding-block:0 10px}
+.tabsm a{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;text-decoration:none;border:2px solid #fff;padding:4px 10px;white-space:nowrap}
+.tabsm a.cta{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.subhead{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:1rem;color:var(--muted);margin:30px 0 12px}
+.stats.base .n{color:var(--red-deep)}
+.deleg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:4px}
+.deleg div{border-left:4px solid var(--yellow);background:#fffaf0;padding:12px 14px;display:grid;gap:2px}
+.deleg b{font-weight:800}
+.deleg span{font-size:.88rem;color:var(--muted)}
+.pemp{margin-top:16px;background:var(--ink);color:#fff;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.pemp img{width:48px;height:auto;filter:brightness(0) invert(1)}
+.pemp b{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:1.15rem;color:var(--yellow)}
+.pemp p{margin:2px 0 0;color:#f3dcdc;font-size:.92rem}
+/* hoja de vida */
+#cv{padding-top:40px}
+.cv-head{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;border-bottom:4px solid var(--red);padding-bottom:24px;margin-bottom:28px}
+.cv-head img{width:150px;height:auto;display:block}
+.cv-head h2{font-size:clamp(2.2rem,6vw,3.6rem)}
+.cv-head p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.cv-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
+.cv-block{display:grid;gap:14px;margin-bottom:30px;align-content:start}
+.cv-block h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;color:var(--red);font-size:1.25rem;border-bottom:2px solid var(--line);padding-bottom:6px}
+.cv-item{display:grid;grid-template-columns:120px 1fr;gap:12px}
+.cv-item .when{font-family:var(--display);color:var(--muted);font-size:.9rem;letter-spacing:.03em}
+.cv-item b{display:block}
+.cv-item span{font-size:.92rem;color:var(--muted)}
+.bar-skill{display:grid;gap:4px}
+.bar-skill i{display:block;height:8px;background:var(--red-soft)}
+.bar-skill i span{display:block;height:100%;background:var(--red)}
+/* buzón */
+.buzon{background:var(--red);color:#fff}
+.buzon .kicker{color:var(--yellow)}
+.buzon .head p{color:#ffe0e0}
+.bz{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:820px}
+.bz label{display:grid;gap:4px;font-weight:600;font-size:.9rem}
+.bz .full{grid-column:1/-1}
+.bz input,.bz select,.bz textarea{font:inherit;color:var(--ink);background:#fff;border:0;border-radius:4px;padding:11px 12px;min-width:0;width:100%}
+.bz textarea{resize:vertical;min-height:110px}
+.bz .chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.85rem;color:#ffe9e9}
+.bz .chk input{width:auto;margin-top:3px}
+.bz button{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.1rem;background:var(--yellow);color:var(--ink);border:0;padding:14px 22px;cursor:pointer;justify-self:start}
+.bz .err{color:var(--yellow);font-weight:600;font-size:.9rem;min-height:1.2em}
+.bz-done{background:#fff;color:var(--ink);padding:22px;max-width:820px;display:grid;gap:10px}
+.bz-done .btns{display:flex;flex-wrap:wrap;gap:8px}
+.bz-done a,.bz-done button{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;text-decoration:none;border:2px solid var(--red);color:var(--red);background:#fff;padding:8px 14px;cursor:pointer;font-size:.95rem}
+.bz-done a.main{background:var(--red);color:#fff}
+.bz-done pre{white-space:pre-wrap;background:var(--red-soft);padding:12px;font:inherit;font-size:.88rem;margin:0}
+@media (max-width:760px){.tabsm{display:flex}.cv-grid{grid-template-columns:1fr}.cv-head{grid-template-columns:1fr}.bz{grid-template-columns:1fr}.cv-item{grid-template-columns:90px 1fr}.pemp{grid-template-columns:1fr}}
+.posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:20px}
+.post{display:grid;gap:8px;align-content:start;text-decoration:none;border:2px solid var(--red);padding:16px;background:#fff;transition:transform .15s}
+.post:hover{transform:translateY(-2px)}
+.post .net{display:flex;justify-content:space-between;align-items:center;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:.85rem}
+.post .net b{background:var(--red);color:#fff;padding:2px 8px}
+.post .net span{color:var(--muted)}
+.post h3{font-weight:800;font-size:1.05rem}
+.post .go{font-family:var(--display);text-transform:uppercase;color:var(--red);letter-spacing:.05em;font-size:.85rem}
+.profiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;background:var(--red)}
+.profiles a{background:var(--red);color:#fff;text-decoration:none;padding:16px;display:grid;gap:2px;border:2px solid var(--red)}
+.profiles a:hover{background:var(--red-deep)}
+.profiles b{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:1.2rem}
+.profiles span{color:#ffdede;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.post{transition:none}}
+footer{background:var(--red);color:var(--white);padding-block:36px calc(36px + env(safe-area-inset-bottom,0px))}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+footer img{height:44px;width:auto}
+footer .links{display:flex;gap:10px;flex-wrap:wrap}
+footer .links a{font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--white);padding:6px 12px}
+footer small{display:block;color:#ffd5d5;max-width:60ch}
+
+@media (max-width:760px){
+  .hero .in{grid-template-columns:1fr;padding-top:28px}
+  .hero .photo img{max-width:320px;margin:0 auto}
+  .who-grid{grid-template-columns:1fr}
+  .bar nav{display:none}
+  section{padding-block:48px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .stat .n{transition:color .3s}
+}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <div class="in">
+    <a href="#inicio" aria-label="Inicio"><img src="img/logo-blanco.png" alt="Juan Diego Ospina"></a>
+    <nav aria-label="Secciones">
+      <a href="#cifras">En cifras</a><a href="#gestion">Gestión</a><a href="#redes">Redes</a><a href="#quien">Quién soy</a><a href="#banderas">Banderas</a><a href="#hoja-de-vida">Hoja de vida</a><a href="#buzon" class="cta">Contáctame</a>
+    </nav>
+  </div>
+  <div class="in tabsm" aria-label="Secciones">
+    <a href="#cifras">Cifras</a><a href="#gestion">Gestión</a><a href="#redes">Redes</a><a href="#quien">Quién soy</a><a href="#hoja-de-vida">Hoja de vida</a><a href="#buzon" class="cta">Contáctame</a>
+  </div>
+</header>
+<main id="vistaInicio">
+
+<div class="hero" id="inicio">
+  <div class="in">
+    <div>
+      <div class="motto">¡Siempre adelante!</div>
+      <h1>Politecto <span class="x">X</span> Teusaquillo</h1>
+      <p class="lede">Soy Juan Diego Ospina Numa, un joven de Teusaquillo que une la política y la arquitectura para transformar la ciudad desde lo social. Aquí ves lo que hago, en cifras y al día.</p>
+      <div class="who">
+        <span class="tag y">Vicepresidente · Consejo Local de Juventud</span>
+        <span class="tag">Arquitectura + Ciencia Política</span>
+        <span class="tag">20 años en el Park Way</span>
+        <span class="tag">#EquipoTeusaquillo</span>
+      </div>
+    </div>
+    <div class="photo"><img src="img/f29.jpg" alt="Juan Diego Ospina con el puño en alto, con su buzo rojo de campaña"></div>
+  </div>
+  <div class="zebra" aria-hidden="true"></div>
+</div>
+
+<section id="cifras">
+  <div class="in">
+    <div class="head">
+      <div class="kicker">En cifras</div>
+      <h2>Lo que he hecho por Teusaquillo</h2>
+      <p>Cada recorrido, cada encuentro con vecinos y cada gestión como consejero se suma aquí. La página se actualiza todas las mañanas.</p>
+    </div>
+    <div class="stats base">
+      <div class="stat"><span class="n">+30</span><span class="l">actividades comunitarias apoyadas y articuladas</span><span class="s">con colectivos, juntas y vecinos</span></div>
+      <div class="stat"><span class="n">+10</span><span class="l">encuentros vecinales</span><span class="s">escuchando a Teusaquillo</span></div>
+      <div class="stat"><span class="n">4</span><span class="l">proyectos de presupuestos participativos</span><span class="s">recursos de la localidad decididos con la comunidad</span></div>
+      <div class="stat"><span class="n">+15</span><span class="l">eventos preventivos y comunitarios</span><span class="s">apoyando con la Policía Cívica</span></div>
+      <div class="stat"><span class="n">4</span><span class="l">instancias donde represento a los jóvenes</span><span class="s">delegado del Consejo Local de Juventud</span></div>
+      <div class="stat"><span class="n">1</span><span class="l">proyecto de seguridad que promuevo</span><span class="s">adaptación de insumos tecnológicos</span></div>
+    </div>
+    <div class="subhead">Delegado del Consejo Local de Juventud ante</div>
+    <div class="deleg">
+      <div><b>Consejo Local DRAFE</b><span>Deporte, recreación, actividad física y equipamientos</span></div>
+      <div><b>Consejo Consultivo de Política Educativa</b><span>Dirección Local de Educación (DILE)</span></div>
+      <div><b>Comisión de Concertación y Decisión</b><span>Alcaldía Local de Teusaquillo · presupuestos participativos</span></div>
+      <div><b>Comité Operativo Local de Juventud</b><span>Política pública de juventud en la localidad</span></div>
+    </div>
+    <div class="pemp"><img src="img/picto-rojo.png" alt=""><div><b>Defensor del PEMP de Teusaquillo</b><p>El Plan Especial de Manejo y Protección cuida el patrimonio de nuestras casas y barrios. Como arquitecto y vecino, lo defiendo.</p></div></div>
+    <div class="subhead">Registrado día a día desde octubre de 2026</div>
+    <div class="stats" id="stats"></div>
+    <div class="live-empty" id="statsEmpty" hidden>El registro diario arrancó en octubre de 2026: desde ahora cada recorrido, encuentro y gestión nueva se suma aquí cada mañana.</div>
+    <div class="updated"><span class="dot" aria-hidden="true"></span><span id="upd">Actualizado</span></div>
+  </div>
+</section>
+
+<div class="zebra red" aria-hidden="true"></div>
+
+<section class="track-band">
+  <div class="in">
+    <div class="head">
+      <div class="kicker">Trayectoria</div>
+      <h2>Liderazgo que ya está en marcha</h2>
+      <p>Antes de pedir nada, esto es lo que he construido.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="yr">2026 – 2030</span><b>Vicepresidente del Consejo Local de Juventud</b><span>Teusaquillo. Elegido por los jóvenes de la localidad.</span></div>
+      <div class="fact"><span class="yr">2026 – 2028</span><b>Consejo de Facultad de Ciencia Política y Relaciones Internacionales</b><span>Pontificia Universidad Javeriana.</span></div>
+      <div class="fact"><span class="yr">2024 – 2026</span><b>Consejo de Facultad de Arquitectura y Diseño</b><span>Pontificia Universidad Javeriana.</span></div>
+      <div class="fact"><span class="yr">2024 – 2026</span><b>Comité de Estudiantes</b><span>Pontificia Universidad Javeriana.</span></div>
+      <div class="fact"><span class="yr">Desde 2024</span><b>Policía Cívico</b><span>Policía Cívica de Mayores, Policía Metropolitana de Bogotá.</span></div>
+      <div class="fact"><span class="yr">Desde marzo 2024</span><b>Militante del Nuevo Liberalismo</b><span>Equipo por la renovación política.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gestion">
+  <div class="in">
+    <div class="head">
+      <div class="kicker">Mi gestión</div>
+      <h2>Lo hecho, con fecha</h2>
+      <p>Como Consejero de Juventud, como vecino y como militante. Cada entrada es algo que pasó de verdad.</p>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por rol"></div>
+    <div class="log" id="log"></div>
+  </div>
+</section>
+
+<section id="redes" style="padding-top:0">
+  <div class="in">
+    <div class="head">
+      <div class="kicker">En mis redes</div>
+      <h2>Lo último que publiqué</h2>
+      <p>Lo que hago en el territorio también lo cuento en redes. Síguelo de cerca.</p>
+    </div>
+    <div class="posts" id="posts"></div>
+    <div class="profiles">
+      <a href="https://www.instagram.com/juand_ospinan/" target="_blank" rel="noopener"><b>Instagram</b><span>@juand_ospinan</span></a>
+      <a href="https://www.tiktok.com/@juand_ospinan" target="_blank" rel="noopener"><b>TikTok</b><span>@juand_ospinan</span></a>
+      <a href="https://x.com/juand_ospinan" target="_blank" rel="noopener"><b>X</b><span>@juand_ospinan</span></a>
+      <a href="https://www.linkedin.com/in/juan-diego-ospina-numa-a231662b0" target="_blank" rel="noopener"><b>LinkedIn</b><span>Juan Diego Ospina Numa</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="quien" style="background:#fff7f7">
+  <div class="in who-grid">
+    <div>
+      <div class="head">
+        <div class="kicker">Quién soy</div>
+        <h2>100% rolo y teusaquillense</h2>
+      </div>
+      <ul>
+        <li><img src="img/picto-rojo.png" alt=""><span>He vivido 20 años en el Park Way, el lugar que considero mi hogar y el motor de mis sueños.</span></li>
+        <li><img src="img/picto-rojo.png" alt=""><span>Estudio Arquitectura (décimo semestre) y Ciencia Política (quinto semestre) en la Pontificia Universidad Javeriana.</span></li>
+        <li><img src="img/picto-rojo.png" alt=""><span>Policía cívico, comprometido con el servicio a la comunidad.</span></li>
+        <li><img src="img/picto-rojo.png" alt=""><span>Coleccionista de monedas y billetes antiguos, apasionado por la historia y la memoria.</span></li>
+        <li><img src="img/picto-rojo.png" alt=""><span>Tengo una perrita, Kira, mi compañera de vida.</span></li>
+      </ul>
+    </div>
+    <div class="gallery">
+      <figure><img src="img/f47.jpg" alt="Juan Diego con casco de obra: arquitectura" loading="lazy"></figure>
+      <figure><img src="img/f43.jpg" alt="Juan Diego hablando en un atril: política" loading="lazy"></figure>
+      <figure><img src="img/f44.jpg" alt="Juan Diego con su credencial: Consejo Local de Juventud" loading="lazy"></figure>
+      <figure><img src="img/f45.jpg" alt="Juan Diego con camiseta del Nuevo Liberalismo" loading="lazy"></figure>
+      <figure><img src="img/f49.jpg" alt="Juan Diego con uniforme de policía cívico" loading="lazy"></figure>
+      <figure><img src="img/f50.jpg" alt="Kira, su perrita pug" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="banderas">
+  <div class="in">
+    <div class="head">
+      <div class="kicker">Mis banderas</div>
+      <h2>Por lo que trabajo</h2>
+    </div>
+    <div class="flags">
+      <div class="flag"><span class="num">01</span><h3>Educación y cultura ciudadana</h3><p>Fomentar valores, respeto y corresponsabilidad en nuestra comunidad.</p></div>
+      <div class="flag"><span class="num">02</span><h3>Ciudad desde la juventud</h3><p>Hacer de la voz joven la base para diseñar el futuro urbano.</p></div>
+      <div class="flag"><span class="num">03</span><h3>Articulación de actores jóvenes</h3><p>Tejer redes entre colectivos, estudiantes y organizaciones para transformar el territorio.</p></div>
+    </div>
+    <div class="pillars">
+      <span class="tag" style="border:2px solid var(--red)">Patrimonio</span>
+      <span class="tag" style="border:2px solid var(--red)">Arquitectura como proyecto de comunidad</span>
+      <span class="tag" style="border:2px solid var(--red)">Medio ambiente y desarrollo sostenible</span>
+      <span class="tag" style="border:2px solid var(--red)">Renovación política</span>
+    </div>
+  </div>
+</section>
+
+<section id="diccionario" style="padding-top:0">
+  <div class="in">
+    <div class="head">
+      <div class="kicker">Diccionario</div>
+      <h2>Palabras que deberías conocer</h2>
+      <p>Las uso todos los días. Esto es lo que significan y cómo las aplico en el territorio.</p>
+    </div>
+    <div class="dict">
+      <div class="word"><img src="img/picto-rojo.png" alt=""><h3>Politecto</h3><span class="et">Acrónimo de político y arquitecto</span><p>Persona que diseña y gestiona proyectos públicos y laboratorios urbanos, aplicando principios arquitectónicos para mejorar el entorno y la convivencia ciudadana.</p></div>
+      <div class="word"><img src="img/picto-rojo.png" alt=""><h3>Civicultor</h3><span class="et">De cívico y cultor</span><p>Persona que siembra, fomenta y consolida la cultura ciudadana, el orden y el sentido de pertenencia territorial, promoviendo el cuidado del espacio público y la convivencia armónica en su comunidad.</p></div>
+      <div class="word"><img src="img/picto-rojo.png" alt=""><h3>Civiparche</h3><span class="et">De cívico y parche</span><p>Encuentro o grupo de jóvenes en el espacio público que tiene como fin promover la cultura ciudadana, la apropiación del territorio y acciones constructivas para el entorno local.</p></div>
+      <div class="word"><img src="img/picto-rojo.png" alt=""><h3>Seguritecto</h3><span class="et">De seguridad y arquitecto</span><p>Persona que diseña e implementa estrategias de seguridad ciudadana a partir de la transformación física del espacio urbano, asegurando entornos iluminados y organizados.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="barriosSec" style="background:#fff7f7" hidden>
+  <div class="in">
+    <div class="head">
+      <div class="kicker">En el territorio</div>
+      <h2>Barrios donde he estado</h2>
+      <p>Recorridos, encuentros y gestiones por barrio.</p>
+    </div>
+    <div class="barrios" id="barrios"></div>
+  </div>
+</section>
+
+<section id="buzon" class="buzon">
+  <div class="in">
+    <div class="head">
+      <div class="kicker">Buzón ciudadano</div>
+      <h2>Contáctame</h2>
+      <p>Escríbeme lo que quieras sobre Teusaquillo. Lo leo yo y te respondo.</p>
+    </div>
+    <form class="bz" id="bzForm" novalidate>
+      <label for="bzNombre">Nombre<input id="bzNombre" autocomplete="name" required></label>
+      <label for="bzTel">Teléfono<input id="bzTel" type="tel" inputmode="tel" autocomplete="tel" required placeholder="300 123 4567"></label>
+      <label for="bzBarrio">Barrio<input id="bzBarrio" list="bzBarrios" required placeholder="La Soledad"></label>
+      <label for="bzCorreo">Correo<input id="bzCorreo" type="email" autocomplete="email" required></label>
+      <label for="bzMsg" class="full">Escríbeme<textarea id="bzMsg" required placeholder="Cuéntame lo que necesitas, tu idea o lo que pasa en tu barrio."></textarea></label>
+      <label class="chk full" for="bzOk"><input id="bzOk" type="checkbox" required> <span>Autorizo a Juan Diego Ospina Numa a tratar mis datos personales para atender este mensaje y enviarme información sobre su gestión en Teusaquillo, conforme a la Ley 1581 de 2012. Puedo pedir que se corrijan o eliminen en cualquier momento.</span></label>
+      <div class="err full" id="bzErr" role="alert"></div>
+      <button type="submit" class="full">Enviar petición</button>
+    </form>
+    <div class="bz-done" id="bzDone" hidden></div>
+    <datalist id="bzBarrios"><option value="Teusaquillo"><option value="La Soledad"><option value="Palermo"><option value="Galerías"><option value="Armenia"><option value="La Magdalena"><option value="Santa Teresita"><option value="Belalcázar"><option value="Alfonso López"><option value="Campín"><option value="Quinta Paredes"><option value="Acevedo Tejada"><option value="Gran América"><option value="La Esmeralda"><option value="Nicolás de Federmán"><option value="Pablo VI"><option value="Rafael Núñez"><option value="Ciudad Salitre Oriental"><option value="El Recuerdo"><option value="Ortezal"></datalist>
+  </div>
+</section>
+</main>
+
+<main id="vistaCV" hidden>
+  <section id="cv">
+    <div class="in">
+      <div class="cv-head">
+        <img src="img/f29.jpg" alt="Juan Diego Ospina Numa">
+        <div>
+          <div class="kicker">Hoja de vida</div>
+          <h2>Juan Diego Ospina Numa</h2>
+          <p>Estudiante de Arquitectura y Ciencia Política. Vicepresidente del Consejo Local de Juventud de Teusaquillo. Me mueve el bienestar social, la inclusión y el desarrollo de proyectos sostenibles que tengan impacto real en las comunidades.</p>
+        </div>
+      </div>
+      <div class="cv-grid">
+        <div>
+          <div class="cv-block">
+            <h3>Representación y cargos</h3>
+            <div class="cv-item"><span class="when">2026 – 2030</span><div><b>Vicepresidente, Consejo Local de Juventud de Teusaquillo</b><span>Delegado ante el Consejo Local DRAFE, el Consejo Consultivo de Política Educativa de la DILE, la Comisión de Concertación y Decisión de la Alcaldía Local y el Comité Operativo Local de Juventud.</span></div></div>
+            <div class="cv-item"><span class="when">2026 – 2028</span><div><b>Miembro, Consejo de Facultad de Ciencia Política y Relaciones Internacionales</b><span>Pontificia Universidad Javeriana.</span></div></div>
+            <div class="cv-item"><span class="when">2024 – 2026</span><div><b>Miembro, Consejo de Facultad de Arquitectura y Diseño</b><span>Pontificia Universidad Javeriana.</span></div></div>
+            <div class="cv-item"><span class="when">2024 – 2026</span><div><b>Miembro, Comité de Estudiantes</b><span>Pontificia Universidad Javeriana.</span></div></div>
+            <div class="cv-item"><span class="when">Desde 2024</span><div><b>Militante del Nuevo Liberalismo</b><span>Bogotá, desde marzo de 2024.</span></div></div>
+            <div class="cv-item"><span class="when">2021</span><div><b>Representante estudiantil, Consejo Directivo</b><span>Colegio Champagnat de Bogotá. Propuestas para la modificación del Manual de Convivencia.</span></div></div>
+          </div>
+          <div class="cv-block">
+            <h3>Trabajo comunitario</h3>
+            <div class="cv-item"><span class="when">Teusaquillo</span><div><b>Apoyo y articulación en más de 30 actividades comunitarias</b><span>Y más de 10 encuentros vecinales.</span></div></div>
+            <div class="cv-item"><span class="when">Alcaldía Local</span><div><b>4 proyectos de presupuestos participativos</b><span>Acompañamiento a iniciativas decididas con la comunidad.</span></div></div>
+            <div class="cv-item"><span class="when">Seguridad</span><div><b>Promotor de un proyecto de seguridad</b><span>Adaptación de insumos tecnológicos para la seguridad del barrio.</span></div></div>
+            <div class="cv-item"><span class="when">Patrimonio</span><div><b>Defensor del PEMP de Teusaquillo</b><span>Plan Especial de Manejo y Protección del patrimonio de la localidad.</span></div></div>
+            <div class="cv-item"><span class="when">Desde dic. 2024</span><div><b>Policía Cívica de Mayores, Policía Metropolitana de Bogotá</b><span>Apoyo en más de 15 eventos preventivos y comunitarios.</span></div></div>
+            <div class="cv-item"><span class="when">Desde 2023</span><div><b>Cívicos Colombia</b><span>Agrupación que ayuda a los ciudadanos en casos de emergencia.</span></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="cv-block">
+            <h3>Formación</h3>
+            <div class="cv-item"><span class="when">Desde 2022</span><div><b>Arquitectura · décimo semestre</b><span>Pontificia Universidad Javeriana. Coordinador del semillero de la Facultad de Arquitectura.</span></div></div>
+            <div class="cv-item"><span class="when">Desde 2024</span><div><b>Ciencia Política · quinto semestre</b><span>Pontificia Universidad Javeriana.</span></div></div>
+            <div class="cv-item"><span class="when">2026</span><div><b>Diplomado en Políticas Públicas</b><span>Fundación Colombia Líder.</span></div></div>
+            <div class="cv-item"><span class="when">2010 – 2021</span><div><b>Bachiller Académico</b><span>Colegio Champagnat de Bogotá.</span></div></div>
+          </div>
+          <div class="cv-block">
+            <h3>Idiomas</h3>
+            <div class="bar-skill"><b>Inglés · B2</b><i><span style="width:66%"></span></i></div>
+            <div class="bar-skill"><b>Latín · A2</b><i><span style="width:33%"></span></i></div>
+          </div>
+          <div class="cv-block">
+            <h3>Habilidades</h3>
+            <div class="cv-item" style="grid-template-columns:1fr"><div><b>Historia y panorama político</b><span>Conocedor de la historia y la política del país y de su entorno.</span></div></div>
+            <div class="cv-item" style="grid-template-columns:1fr"><div><b>Liderazgo de grupos</b><span>Manejo de equipos para sacar adelante iniciativas.</span></div></div>
+            <div class="cv-item" style="grid-template-columns:1fr"><div><b>Comunicación</b><span>Buen conversador, cercano a la gente.</span></div></div>
+            <div class="cv-item" style="grid-template-columns:1fr"><div><b>Diseño gráfico y redes sociales</b><span>Diseño mi propia línea gráfica y contenidos.</span></div></div>
+          </div>
+          <div class="cv-block">
+            <h3>Enlaces</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <a class="tag" style="border:2px solid var(--red);text-decoration:none" href="https://www.linkedin.com/in/juan-diego-ospina-numa-a231662b0" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="tag" style="border:2px solid var(--red);text-decoration:none" href="https://www.instagram.com/juand_ospinan/" target="_blank" rel="noopener">Instagram</a>
+              <a class="tag y" style="text-decoration:none" href="#buzon">Escríbeme por el buzón</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="in">
+    <div style="display:grid;gap:10px">
+      <img src="img/logo-blanco.png" alt="Juan Diego Ospina">
+      <small>Página informativa de Juan Diego Ospina Numa, Consejero Local de Juventud de Teusaquillo y militante del Nuevo Liberalismo. ¡Siempre adelante, ni un paso atrás!</small>
+    </div>
+    <div class="links">
+      <a href="https://www.instagram.com/juand_ospinan/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@juand_ospinan" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://x.com/juand_ospinan" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</footer>
+
+<!-- DATOS:INICIO — este bloque lo actualiza cada mañana la tarea programada -->
+<script id="datos" type="application/json">{"actualizado":"2026-10-15","stats":{"recorridos":0,"vecinos":0,"barrios":0,"dias":0,"gestiones":0,"consejero":0,"publicaciones":0},"logros":[],"barrios":[],"posts":[]}</script>
+<!-- DATOS:FIN -->
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmtDate = d => d ? new Date(d+"T12:00:00").toLocaleDateString("es-CO",{day:"numeric",month:"long",year:"numeric"}) : "";
+  let D = {stats:{},logros:[],barrios:[]};
+  try { D = JSON.parse($("#datos").textContent); } catch(e){}
+  const S = D.stats || {};
+  const fijos = [
+    {n:20, l:"años viviendo en el Park Way", s:"Teusaquillo es mi casa"},
+    {n:4, l:"años de periodo en el Consejo Local de Juventud", s:"2026 – 2030"}
+  ];
+  const vivos = [
+    {k:"recorridos", l:"recorridos y encuentros", s:"en barrios de Teusaquillo"},
+    {k:"vecinos", l:"vecinos escuchados", s:"en recorridos y reuniones"},
+    {k:"barrios", l:"barrios visitados", s:"de la localidad 13"},
+    {k:"dias", l:"días en territorio", s:"con actividad registrada"},
+    {k:"gestiones", l:"gestiones y logros", s:"con fecha y detalle"},
+    {k:"consejero", l:"acciones como consejero", s:"Consejo Local de Juventud"},
+    {k:"publicaciones", l:"contenidos publicados", s:"en mis redes"}
+  ].filter(x => (+S[x.k]||0) > 0);
+  const card = (n,l,s) => `<div class="stat"><span class="n">${(+n).toLocaleString("es-CO")}</span><span class="l">${esc(l)}</span><span class="s">${esc(s)}</span></div>`;
+  $("#stats").innerHTML = vivos.map(x=>card(S[x.k],x.l,x.s)).join("") + fijos.map(x=>card(x.n,x.l,x.s)).join("");
+  $("#statsEmpty").hidden = vivos.length > 0;
+  $("#upd").textContent = "Actualizado el " + fmtDate(D.actualizado);
+
+  const logros = (D.logros||[]).slice().sort((a,b)=>(b.fecha||"").localeCompare(a.fecha||""));
+  const roles = ["Todo", ...new Set(logros.map(x=>x.rol).filter(Boolean))];
+  let sel = "Todo";
+  function drawLog(){
+    $("#chips").innerHTML = roles.length>1 ? roles.map(r=>`<button class="chip" aria-pressed="${r===sel}" data-r="${esc(r)}">${esc(r)}</button>`).join("") : "";
+    const list = logros.filter(x=>sel==="Todo"||x.rol===sel);
+    $("#log").innerHTML = list.length ? list.map(x=>`<div class="item"><span class="meta">${esc(fmtDate(x.fecha))} · ${esc(x.rol||"")}${x.barrio?" · "+esc(x.barrio):""}</span><h3>${esc(x.titulo)}</h3>${x.cifra?`<span class="fig">${(+x.cifra).toLocaleString("es-CO")} ${esc(x.unidad||"")}</span>`:""}${x.descripcion?`<p>${esc(x.descripcion)}</p>`:""}</div>`).join("")
+      : `<div class="item"><span class="meta">Octubre 2026</span><h3>Comienza el registro público de mi gestión</h3><p>Desde aquí iré dejando, con fecha, cada sesión del Consejo de Juventud, cada jornada en el barrio y cada gestión ante la Alcaldía Local.</p></div>`;
+  }
+  $("#chips").addEventListener("click", e => { const r=e.target.dataset?.r; if(r){ sel=r; drawLog(); } });
+  drawLog();
+
+  // vistas: inicio / hoja de vida (el hash solo puede ser una palabra)
+  function route(){
+    const cv = location.hash === "#hoja-de-vida";
+    $("#vistaCV").hidden = !cv; $("#vistaInicio").hidden = cv;
+    if (cv) window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange", route); route();
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", () => {
+    const h = a.getAttribute("href");
+    if (h !== "#hoja-de-vida" && !$("#vistaCV").hidden){ $("#vistaCV").hidden = true; $("#vistaInicio").hidden = false; }
+  }));
+
+  // buzón: arma la petición y la envía por el formulario conectado, o por correo como respaldo
+  const BUZON = { correo: "juandospinanuma@gmail.com", formulario: null };
+  $("#bzForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const v = id => $(id).value.trim();
+    const d = {nombre:v("#bzNombre"), tel:v("#bzTel"), barrio:v("#bzBarrio"), correo:v("#bzCorreo"), msg:v("#bzMsg")};
+    const err = !d.nombre ? "Escribe tu nombre." : d.tel.replace(/\D/g,"").length < 7 ? "Escribe un teléfono válido." : !d.barrio ? "Escribe tu barrio." : !/^\S+@\S+\.\S+$/.test(d.correo) ? "Escribe un correo válido." : !d.msg ? "Escribe tu mensaje." : !$("#bzOk").checked ? "Para enviarla necesito tu autorización de datos." : "";
+    $("#bzErr").textContent = err; if (err) return;
+    const asunto = `Contacto POLITECTO X TEUSAQUILLO · ${d.barrio}`;
+    const cuerpo = `Nombre: ${d.nombre}\nTeléfono: ${d.tel}\nBarrio: ${d.barrio}\nCorreo: ${d.correo}\n\nMensaje:\n${d.msg}\n\nAutorizó el tratamiento de datos (Ley 1581 de 2012).`;
+    let link, label;
+    if (BUZON.formulario){
+      const f = BUZON.formulario, q = new URLSearchParams({usp:"pp_url"});
+      const map = {nombre:d.nombre, tel:d.tel, barrio:d.barrio, correo:d.correo, msg:d.msg};
+      Object.entries(f.campos).forEach(([k,entry]) => q.set(entry, map[k]||""));
+      link = f.url + "?" + q.toString(); label = "Confirmar y enviar";
+    } else {
+      link = `mailto:${BUZON.correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`; label = "Enviar desde mi correo";
+    }
+    $("#bzForm").hidden = true;
+    $("#bzDone").hidden = false;
+    $("#bzDone").innerHTML = `<b style="font-family:var(--display);text-transform:uppercase;font-size:1.3rem;color:var(--red)">Último paso, ${esc(d.nombre.split(" ")[0])}</b>
+      <p style="margin:0">${BUZON.formulario ? "Se abrirá el formulario con tu mensaje ya escrito: solo presiona Enviar." : "Se abrirá tu correo con el mensaje listo: solo presiona Enviar. Si no se abre, copia el texto y envíalo a <b style='user-select:all'>"+BUZON.correo+"</b>."}</p>
+      <div class="btns"><a class="main" href="${esc(link)}" target="_blank" rel="noopener">${label}</a><button type="button" id="bzCopy">Copiar texto</button><button type="button" id="bzBack">Editar</button></div>
+      <pre id="bzTxt">${esc(asunto+"\n\n"+cuerpo)}</pre>`;
+    $("#bzCopy").onclick = async () => { try { await navigator.clipboard.writeText($("#bzTxt").textContent); $("#bzCopy").textContent = "Copiado"; } catch(err){ const r=document.createRange(); r.selectNodeContents($("#bzTxt")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); } };
+    $("#bzBack").onclick = () => { $("#bzDone").hidden = true; $("#bzForm").hidden = false; };
+  });
+
+  const posts = (D.posts||[]).filter(x=>/^https:\/\//.test(x.url||"")).sort((a,b)=>(b.fecha||"").localeCompare(a.fecha||"")).slice(0,9);
+  $("#posts").innerHTML = posts.map(x=>`<a class="post" href="${esc(x.url)}" target="_blank" rel="noopener"><span class="net"><b>${esc(x.red)}</b><span>${esc(fmtDate(x.fecha))}</span></span><h3>${esc(x.titulo||"Ver publicación")}</h3><span class="go">Ver publicación →</span></a>`).join("");
+  $("#posts").hidden = !posts.length;
+
+  const b = (D.barrios||[]).filter(x=>x.n>0).sort((a,b)=>b.n-a.n);
+  $("#barriosSec").hidden = !b.length;
+  $("#barrios").innerHTML = b.map(x=>`<span class="barrio">${esc(x.barrio)}<b>${x.n}</b></span>`).join("");
+})();
+</script>
+
+</body>
+</html>
